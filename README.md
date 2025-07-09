@@ -25,10 +25,10 @@ This project is a web-based application for brain tumor detection using MRI imag
 ## Screenshots
 
 ### Main Page (`index.html`)
-(![Main Page](./Screenshot%202025-06-26%20at%2016-23-56%20%D8%AA%D8%B4%D8%AE%DB%8C%D8%B5%20%D8%AA%D9%88%D9%85%D9%88%D8%B1%20%D9%85%D8%BA%D8%B2%DB%8C%20MRI.png))
+![Main Page](./Screenshot%202025-06-26%20at%2016-23-56%20%D8%AA%D8%B4%D8%AE%DB%8C%D8%B5%20%D8%AA%D9%88%D9%85%D9%88%D8%B1%20%D9%85%D8%BA%D8%B2%DB%8C%20MRI.png)
 
 ### Result Page (`result.html`)
-![Result Page](./Screenshot 2025-06-26 at 17-34-54 نتیجه تشخیص MRI.png)
+![Result Page](./Screenshot%202025-06-26%20at%2017-34-54%20%D9%86%D8%AA%DB%8C%D8%AC%D9%87%20%D8%AA%D8%B4%D8%AE%DB%8C%D8%B5%20MRI.png)
 
 
 ## Installation
