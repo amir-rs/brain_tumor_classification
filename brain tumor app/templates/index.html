@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>سیستم تشخیص تومورمغزی با استفاده از ام آر آی </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        body { background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%); min-height: 100vh; }
+        .container { max-width: 520px; margin-top: 50px; background: #fff; border-radius: 18px; box-shadow: 0 8px 32px 0 rgba(31,38,135,0.2); padding: 35px 30px; }
+        .form-label { font-weight: bold; }
+        .form-check-label { font-size: 1.05em; }
+        .btn-primary { background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); border: none; font-weight: bold; }
+        .btn-primary:hover { background: linear-gradient(90deg, #764ba2 0%, #667eea 100%); }
+        .form-section { margin-bottom: 22px; }
+        .animate__animated { animation-duration: 1.2s; }
+        .logo { width: 70px; margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto; }
+    </style>
+</head>
+<body>
+<div class="container animate__animated animate__fadeInDown">
+    <img src="https://cdn-icons-png.flaticon.com/512/3209/3209265.png" class="logo animate__animated animate__pulse animate__infinite" alt="MRI Logo">
+    <h2 class="mb-4 text-center animate__animated animate__fadeIn">سیستم تشخیص تومورمغزی با استفاده از ام آر آی </h2>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="alert alert-danger animate__animated animate__shakeX">{{ messages[0] }}</div>
+      {% endif %}
+    {% endwith %}
+    <form method="post" enctype="multipart/form-data" class="animate__animated animate__fadeInUp animate__delay-1s">
+        <div class="form-section">
+            <label class="form-label">سن:</label>
+            <input type="number" name="age" class="form-control" min="1" max="120" required>
+        </div>
+        <div class="form-section">
+            <label class="form-label">جنسیت:</label>
+            <select name="gender" class="form-control" required>
+                <option value="">انتخاب کنید</option>
+                <option value="مرد">مرد</option>
+                <option value="زن">زن</option>
+            </select>
+        </div>
+        <div class="form-section">
+            <label class="form-label">علائم (لطفاً همه مواردی که دارید انتخاب کنید):</label>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-check mb-2"><input class="form-check-input" type="checkbox" name="symptoms" value="سردرد" id="symptom1"><label class="form-check-label" for="symptom1">سردرد</label></div>
+                    <div class="form-check mb-2"><input class="form-check-input" type="checkbox" name="symptoms" value="تشنج" id="symptom2"><label class="form-check-label" for="symptom2">تشنج</label></div>
+                    <div class="form-check mb-2"><input class="form-check-input" type="checkbox" name="symptoms" value="اختلال در بینایی" id="symptom3"><label class="form-check-label" for="symptom3">اختلال در بینایی</label></div>
+                    <div class="form-check mb-2"><input class="form-check-input" type="checkbox" name="symptoms" value="اختلال در تعادل" id="symptom4"><label class="form-check-label" for="symptom4">اختلال در تعادل</label></div>
+                    <div class="form-check mb-2"><input class="form-check-input" type="checkbox" name="symptoms" value="سرگیجه" id="symptom5"><label class="form-check-label" for="symptom5">سرگیجه</label></div>
+                    <div class="form-check mb-2"><input class="form-check-input" type="checkbox" name="symptoms" value="دوبینی" id="symptom6"><label class="form-check-label" for="symptom6">دوبینی</label></div>
+                    <div class="form-check mb-2"><input class="form-check-input" type="checkbox" name="symptoms" value="بی‌حسی اندام" id="symptom7"><label class="form-check-label" for="symptom7">بی‌حسی اندام</label></div>
+                    <div class="form-check mb-2"><input class="form-check-input" type="checkbox" name="symptoms" value="اختلال گفتار" id="symptom8"><label class="form-check-label" for="symptom8">اختلال گفتار</label></div>
+                    <div class="form-check mb-2"><input class="form-check-input" type="checkbox" name="symptoms" value="کاهش شنوایی" id="symptom9"><label class="form-check-label" for="symptom9">کاهش شنوایی</label></div>
+                </div>
+                <div class="col-6">
+                    <div class="form-check mb-2"><input class="form-check-input" type="checkbox" name="symptoms" value="کاهش وزن" id="symptom10"><label class="form-check-label" for="symptom10">کاهش وزن</label></div>
+                    <div class="form-check mb-2"><input class="form-check-input" type="checkbox" name="symptoms" value="خستگی" id="symptom11"><label class="form-check-label" for="symptom11">خستگی</label></div>
+                    <div class="form-check mb-2"><input class="form-check-input" type="checkbox" name="symptoms" value="افسردگی" id="symptom12"><label class="form-check-label" for="symptom12">افسردگی</label></div>
+                    <div class="form-check mb-2"><input class="form-check-input" type="checkbox" name="symptoms" value="اضطراب" id="symptom13"><label class="form-check-label" for="symptom13">اضطراب</label></div>
+                    <div class="form-check mb-2"><input class="form-check-input" type="checkbox" name="symptoms" value="تاری دید" id="symptom14"><label class="form-check-label" for="symptom14">تاری دید</label></div>
+                    <div class="form-check mb-2"><input class="form-check-input" type="checkbox" name="symptoms" value="بی‌اختیاری ادرار" id="symptom15"><label class="form-check-label" for="symptom15">بی‌اختیاری ادرار</label></div>
+                    <div class="form-check mb-2"><input class="form-check-input" type="checkbox" name="symptoms" value="اختلال بلع" id="symptom16"><label class="form-check-label" for="symptom16">اختلال بلع</label></div>
+                    <div class="form-check mb-2"><input class="form-check-input" type="checkbox" name="symptoms" value="درد گردن" id="symptom17"><label class="form-check-label" for="symptom17">درد گردن</label></div>
+                    <div class="form-check mb-2"><input class="form-check-input" type="checkbox" name="symptoms" value="خواب‌آلودگی غیرعادی" id="symptom18"><label class="form-check-label" for="symptom18">خواب‌آلودگی غیرعادی</label></div>
+                    <div class="form-check mb-2"><input class="form-check-input" type="checkbox" name="symptoms" value="کاهش تمرکز" id="symptom19"><label class="form-check-label" for="symptom19">کاهش تمرکز</label></div>
+                </div>
+            </div>
+        </div>
+        <div class="form-section">
+            <label class="form-label">سایر علائم یا توضیحات:</label>
+            <textarea name="symptoms" class="form-control" rows="2" placeholder="مثلاً تاری دید، افسردگی، اضطراب و ..."></textarea>
+        </div>
+        <div class="form-section">
+            <label class="form-label">تصویر MRI:</label>
+            <input type="file" name="image" class="form-control" accept="image/*" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100 shadow animate__animated animate__pulse animate__infinite">ارسال و دریافت نتیجه</button>
+    </form>
+</div>
+</body>
+</html> 
